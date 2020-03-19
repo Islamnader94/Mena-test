@@ -6,4 +6,4 @@ python:
 before_install: cd MENA-TEST
 
 script:
-  - python main.py
+  - python3 main.py
