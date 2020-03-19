@@ -12,5 +12,5 @@ var submitForm = function() {
             email: email,
             phone: phone
     }));
-    // location.reload();
+    location.reload();
 }
