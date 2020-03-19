@@ -21,14 +21,14 @@ class AccessResource(Resource):
         # Validate and deserialize input
         response = json.dumps(json_data)
         data = access_schema.loads(response)
-        access = Access.query.filter_by(name=data['name']).first()
+        access = Access.query.filter_by(name=data[0]['name']).first()
         if access:
             return {'message': 'User already exists'}, 400
         access = Access(
-            name=data['name'],
-            address=data['address'],
-            email=data['email'],
-            phone=data['phone']
+            name=data[0]['name'],
+            address=data[0]['address'],
+            email=data[0]['email'],
+            phone=data[0]['phone']
             )
 
         db.session.add(access)
